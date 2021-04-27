@@ -80,7 +80,7 @@ class NewVisitorTest(LiveServerTestCase):
 
         #She notices that her list has unique URL
         edith_list_url = self.browser.current_url
-        self.assertRegex(edith_list_url, '/list/.+')
+        self.assertRegex(edith_list_url, '/lists/.+')
 
         #Now a new user Francis, comes along to the Site
 
