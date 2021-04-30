@@ -1,5 +1,6 @@
 
-from django.test import LiveServerTestCase
+#from django.test import LiveServerTestCase
+from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import WebDriverException
@@ -9,8 +10,8 @@ import unittest
 
 MAX_WAIT = 10
 
-class NewVisitorTest(LiveServerTestCase):
-    
+#class NewVisitorTest(LiveServerTestCase):
+class NewVisitorTest(StaticLiveServerTestCase):    
     def setUp(self):
         self.browser = webdriver.Firefox()
 
@@ -130,7 +131,7 @@ class NewVisitorTest(LiveServerTestCase):
         # centered there too
         inputbox.send_keys('testing')
         inputbox.send_keys(Keys.ENTER)
-        self.wait_for_row_in_list_table('1: testing')
+        self.wait_for_row_in_list_table('1:testing')
         inputbox = self.browser.find_element_by_id('id_new_item')
         self.assertAlmostEqual(
             inputbox.location['x'] + inputbox.size['width'] / 2,
