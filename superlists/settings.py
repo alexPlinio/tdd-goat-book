@@ -25,7 +25,7 @@ SECRET_KEY = '28pyd4f9vi+8wsi+#p&ua7zdax+p34qy#&7z3orf@zmjnd26ay'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*'] # Hack to make staging server run
 
 
 # Application definition
